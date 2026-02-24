@@ -166,16 +166,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Features Bar */}
-      <div className="features-bar">
-        <div className="features-inner">
-          <div className="feat-item"><span className="feat-icon">🛡️</span><span className="feat-label">1 Year Warranty</span></div>
-          <div className="feat-item"><span className="feat-icon">⭐</span><span className="feat-label">Trusted Leading Brands</span></div>
-          <div className="feat-item"><span className="feat-icon">🔧</span><span className="feat-label">10-Point Testing Plan</span></div>
-          <div className="feat-item"><span className="feat-icon">👷</span><span className="feat-label">Trained Engineers</span></div>
-        </div>
-      </div>
-
       {/* CTA / Contact */}
       <section className="cta-section" id="contact">
         <div className="cta-inner">
@@ -192,6 +182,6 @@ export default function HomePage() {
       </section>
 
       <Footer />
-    </div>
+    </div >
   );
 }

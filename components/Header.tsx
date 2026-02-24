@@ -1,6 +1,19 @@
+"use client";
+
+import React, { useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export function Header() {
+    const [query, setQuery] = useState("");
+    const useRouterHook = useRouter();
+
+    const handleSearch = (e: React.KeyboardEvent<HTMLInputElement>) => {
+        if (e.key === "Enter" && query.trim()) {
+            useRouterHook.push(`/search?q=${encodeURIComponent(query.trim())}`);
+        }
+    };
+
     return (
         <header className="site-header">
             <div className="header-inner">
@@ -26,7 +39,13 @@ export function Header() {
                         <circle cx="11" cy="11" r="7" strokeWidth="2" />
                         <path d="M16.5 16.5l4 4" strokeWidth="2" strokeLinecap="round" />
                     </svg>
-                    <input type="text" placeholder="Search appliances…" />
+                    <input
+                        type="text"
+                        placeholder="Search appliances…"
+                        value={query}
+                        onChange={(e) => setQuery(e.target.value)}
+                        onKeyDown={handleSearch}
+                    />
                 </div>
 
                 <div className="header-actions">
