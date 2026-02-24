@@ -1,0 +1,124 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+:root {
+  --purple: #6A0DAD;
+  --purple-light: #8B2FCF;
+  --purple-dark: #4A0878;
+  --purple-pale: #F3E8FF;
+  --green-accent: #b2fce4;
+  --dark: #1a1a2e;
+  --mid: #4c4c6d;
+  --text: #2d2d2d;
+  --light-bg: #f8f7fc;
+  --white: #ffffff;
+  --border: #e8e0f0;
+
+  /* Shadcn/Tailwind overrides */
+  --background: var(--white);
+  --foreground: var(--text);
+  --card: var(--white);
+  --card-foreground: var(--text);
+  --popover: var(--white);
+  --popover-foreground: var(--text);
+  --primary: var(--purple);
+  --primary-foreground: var(--white);
+  --secondary: var(--green-accent);
+  --secondary-foreground: var(--dark);
+  --muted: var(--light-bg);
+  --muted-foreground: var(--mid);
+  --accent: var(--purple-pale);
+  --accent-foreground: var(--purple-dark);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: #e8e0f0;
+  --input: #e8e0f0;
+  --ring: var(--purple);
+  --radius: 0.625rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: var(--text);
+  background: var(--white);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s;
+}
+
+/* Base styles for your design */
+.usp-bar {
+  background: var(--green-accent);
+  text-align: center;
+  padding: 8px 10px;
+  font-size: 13px;
+  font-weight: 500;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.usp-track {
+  display: inline-block;
+  animation: marquee 30s linear infinite;
+}
+
+.usp-track span {
+  margin: 0 40px;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #fff;
+  border-bottom: 1px solid var(--border);
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.page-num {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #fff;
+    border: 1px solid var(--border);
+    color: var(--mid);
+    text-decoration: none;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.page-num.active {
+    background: var(--purple);
+    color: #fff;
+    border-color: var(--purple);
+}
+
+@layer base {
+  * {
+    @apply outline-ring/50;
+  }
+}
