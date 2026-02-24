@@ -1,49 +1,80 @@
 "use client";
 
 import React, { useState, useEffect, useCallback } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
-import { heroSlides } from "@/lib/data";
 import Link from "next/link";
+
+const slides = [
+    {
+        image: "/priority_image/WhatsApp Image 2026-02-23 at 9.53.10 AM.jpeg",
+        alt: "Premium Washing Machines",
+        title: "Premium Washing Machines",
+        desc: "Wash smarter, not harder. Discover our range of refurbished washing machines — efficient, reliable, and unbeatable value.",
+        link: "/washing-machines",
+        cta: "View Our Range"
+    },
+    {
+        image: "/priority_image/WhatsApp Image 2026-02-23 at 9.53.11 AM.jpeg",
+        alt: "Expertly Restored",
+        title: "Expertly Restored",
+        desc: "Premium brands, expertly restored. Each machine undergoes a rigorous 10-point quality check and comes with a full 12-month warranty.",
+        link: "/fridge-freezers",
+        cta: "Explore Models"
+    },
+    {
+        image: "/priority_image/WhatsApp Image 2026-02-23 at 9.53.12 AM.jpeg",
+        alt: "Save Up to 60%",
+        title: "Save Up to 60%",
+        desc: "Why pay full price? Our certified refurbished appliances perform like new at a fraction of the cost. Sustainable living starts here.",
+        link: "#contact",
+        cta: "Contact Us Today"
+    },
+    {
+        image: "/priority_image/WhatsApp Image 2026-02-23 at 9.53.13 AM.jpeg",
+        alt: "Laundry Innovation",
+        title: "Laundry Innovation",
+        desc: "Discover the latest in laundry technology. Efficient, quiet, and designed to fit perfectly into your home.",
+        link: "/washer-dryers",
+        cta: "View Washer Dryers"
+    },
+    {
+        image: "/priority_image/WhatsApp Image 2026-02-23 at 9.53.14 AM.jpeg",
+        alt: "Reliable Performance",
+        title: "Reliable Performance",
+        desc: "Engineered for excellence. Every appliance we sell is backed by our expert team and a comprehensive 1-year guarantee.",
+        link: "/about-us",
+        cta: "Who We Are"
+    }
+];
 
 export function HeroCarousel() {
     const [current, setCurrent] = useState(0);
 
-    const nextSlide = useCallback(() => {
-        setCurrent((prev) => (prev === heroSlides.length - 1 ? 0 : prev + 1));
+    const next = useCallback(() => {
+        setCurrent(prev => (prev + 1) % slides.length);
     }, []);
 
-    const prevSlide = () => {
-        setCurrent((prev) => (prev === 0 ? heroSlides.length - 1 : prev - 1));
-    };
+    const prev = () => setCurrent(prev => (prev - 1 + slides.length) % slides.length);
 
     useEffect(() => {
-        const timer = setInterval(nextSlide, 5000);
+        const timer = setInterval(next, 5000);
         return () => clearInterval(timer);
-    }, [nextSlide]);
+    }, [next]);
 
     return (
-        <section className="relative h-[600px] overflow-hidden bg-[#1a1a2e]">
-            <div
-                className="flex h-full transition-transform duration-700 ease-in-out"
-                style={{ transform: `translateX(-${current * 100}%)` }}
-            >
-                {heroSlides.map((slide, index) => (
-                    <div key={index} className="min-w-full h-full relative">
-                        <img
-                            src={slide.image}
-                            alt={slide.title}
-                            className="w-full h-full object-cover opacity-90"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent flex items-center px-20">
-                            <div className="max-w-2xl text-white">
-                                <h1 className="text-5xl font-bold mb-6 leading-tight">{slide.title}</h1>
-                                <p className="text-xl mb-8 leading-relaxed opacity-90">{slide.description}</p>
-                                <Link
-                                    href={slide.link}
-                                    className="inline-flex items-center gap-2 bg-[#6A0DAD] text-white px-8 py-4 rounded-full font-bold hover:bg-[#8B2FCF] transition-all"
-                                >
-                                    {slide.link.startsWith("/") ? "View Our Range" : "Contact Us Today"}
-                                    <ChevronRight className="w-5 h-5" />
+        <section className="hero" id="home">
+            <div className="slides" style={{ transform: `translateX(-${current * 100}%)` }}>
+                {slides.map((slide, i) => (
+                    <div className="slide" key={i}>
+                        <img src={slide.image} alt={slide.alt} />
+                        <div className="slide-overlay">
+                            <div className="slide-content">
+                                <h1>{slide.title}</h1>
+                                <p>{slide.desc}</p>
+                                <Link href={slide.link} className="btn-primary">
+                                    {slide.cta}
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2" width="18" height="18">
+                                        <path d="M8 6l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
+                                    </svg>
                                 </Link>
                             </div>
                         </div>
@@ -51,26 +82,23 @@ export function HeroCarousel() {
                 ))}
             </div>
 
-            <button
-                onClick={prevSlide}
-                className="absolute left-8 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full border border-white/30 flex items-center justify-center text-white hover:bg-white/10 transition-all z-10"
-            >
-                <ChevronLeft className="w-6 h-6" />
+            <button className="hero-arrow prev" onClick={prev}>
+                <svg viewBox="0 0 24 24">
+                    <path d="M15 18l-6-6 6-6" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
             </button>
-            <button
-                onClick={nextSlide}
-                className="absolute right-8 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full border border-white/30 flex items-center justify-center text-white hover:bg-white/10 transition-all z-10"
-            >
-                <ChevronRight className="w-6 h-6" />
+            <button className="hero-arrow next" onClick={next}>
+                <svg viewBox="0 0 24 24">
+                    <path d="M9 18l6-6-6-6" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
             </button>
 
-            <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-3 z-10">
-                {heroSlides.map((_, index) => (
+            <div className="hero-dots">
+                {slides.map((_, i) => (
                     <button
-                        key={index}
-                        onClick={() => setCurrent(index)}
-                        className={`w-2.5 h-2.5 rounded-full transition-all ${current === index ? "bg-white w-8" : "bg-white/40"
-                            }`}
+                        key={i}
+                        className={`dot${current === i ? " active" : ""}`}
+                        onClick={() => setCurrent(i)}
                     />
                 ))}
             </div>

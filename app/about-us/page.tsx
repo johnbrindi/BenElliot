@@ -1,7 +1,56 @@
 import { USPBar } from "@/components/USPBar";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { Shield, Tool, CheckCircle, Clock, Heart, Users, Award } from "lucide-react";
+import { Users, Heart, Award, CheckCircle, Mail } from "lucide-react";
+import Link from "next/link";
+
+const stats = [
+    { value: "5,000+", label: "Appliances Restored" },
+    { value: "12 Month", label: "Warranty on Every Item" },
+    { value: "10-Point", label: "Quality Check Plan" },
+    { value: "60%", label: "Savings vs. Brand New" },
+];
+
+const values = [
+    {
+        icon: Users,
+        title: "Expert Team",
+        text: "Our specialist engineers bring years of hands-on experience restoring premium appliances to like-new condition.",
+    },
+    {
+        icon: Heart,
+        title: "Customer First",
+        text: "From first enquiry to post-delivery support, we're with you every step of the way.",
+    },
+    {
+        icon: Award,
+        title: "Certified Quality",
+        text: "Every machine passes our rigorous 10-point testing plan before it ever leaves our workshop.",
+    },
+    {
+        icon: CheckCircle,
+        title: "Green Choice",
+        text: "By giving appliances a second life, we help reduce CO₂ emissions and keep working machines out of landfill.",
+    },
+];
+
+const standards = [
+    {
+        num: "01",
+        title: "Transparency",
+        text: "No hidden costs. What you see is what you pay — including a full 12-month warranty on every purchase.",
+    },
+    {
+        num: "02",
+        title: "Reliability",
+        text: "We only source premium brands known for longevity, so your refurbished machine is built to last.",
+    },
+    {
+        num: "03",
+        title: "Service",
+        text: "From our workshop to your kitchen, we provide professional delivery and expert installation.",
+    },
+];
 
 export default function AboutUsPage() {
     return (
@@ -10,70 +59,148 @@ export default function AboutUsPage() {
             <Header />
 
             <main className="flex-grow">
-                {/* Page Hero */}
-                <section className="bg-[#1a1a2e] text-white py-24 relative overflow-hidden">
-                    <div className="max-w-[1280px] mx-auto px-8 relative z-10">
-                        <h1 className="text-5xl font-bold mb-6">Our Story</h1>
-                        <p className="text-xl text-white/70 max-w-2xl leading-relaxed">
-                            Redefining appliance shopping through sustainability, quality, and unbeatable value.
+
+                {/* ── HERO ── */}
+                <section className="about-hero">
+                    <div className="about-hero-content">
+                        <span className="about-hero-badge">Our Story</span>
+                        <h1 className="about-hero-title">
+                            Refurbished Appliances,<br />
+                            <span>Done Right.</span>
+                        </h1>
+                        <p className="about-hero-sub">
+                            Ben Elliott&apos;s was founded on a simple belief — high-quality home appliances shouldn&apos;t cost the earth, literally or figuratively. We restore, test, and deliver with pride.
                         </p>
-                    </div>
-                    <div className="absolute top-0 right-0 w-1/2 h-full bg-[#6A0DAD] opacity-20 blur-[120px] -mr-40 -mt-40" />
-                </section>
-
-                {/* Content Section */}
-                <section className="py-24 bg-white">
-                    <div className="max-w-[1280px] mx-auto px-8 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-                        <div>
-                            <h2 className="text-3xl font-bold text-[#1a1a2e] mb-8">Quality You Can Trust</h2>
-                            <p className="text-[#4c4c6d] text-lg leading-relaxed mb-6">
-                                Ben Elliott&apos;s was founded on a simple belief: high-quality home appliances shouldn&apos;t cost the earth — literally or figuratively. We saw thousands of perfectly good machines heading to landfills every year and decided to do something about it.
-                            </p>
-                            <p className="text-[#4c4c6d] text-base leading-relaxed mb-6">
-                                Our team of expert engineers meticulously restores each appliance, putting them through a rigorous 10-point testing plan that covers everything from internal mechanical components to cosmetic finishing. We don&apos;t just fix machines; we breathe new life into them.
-                            </p>
-                            <p className="text-[#4c4c6d] text-base leading-relaxed">
-                                Today, we&apos;re proud to be a leading name in refurbished appliances, helping thousands of families across the UK save money while making a more sustainable choice for their homes.
-                            </p>
+                        <div className="about-hero-ctas">
+                            <a href="mailto:benelliott638@gmail.com?subject=Enquiry from Website&body=Hi Ben, I am interested in an appliance. Please can you help me with more information?" className="btn-primary">
+                                <Mail size={16} /> Get in Touch
+                            </a>
+                            <Link href="/washing-machines" className="btn-secondary">
+                                Browse Appliances
+                            </Link>
                         </div>
-                        <div className="grid grid-cols-2 gap-6">
-                            {[
-                                { icon: Users, title: "Expert Team", text: "Specialist engineers with years of experience." },
-                                { icon: Heart, title: "Customer First", text: "Dedicated support before and after your purchase." },
-                                { icon: Award, title: "Certified Quality", text: "Every machine meets our high internal standards." },
-                                { icon: CheckCircle, title: "Green Choice", text: "Reducing CO2 and e-waste through restoration." }
-                            ].map((item, idx) => (
-                                <div key={idx} className="p-8 bg-[#f8f7fc] rounded-2xl border border-[#e8e0f0]">
-                                    <item.icon className="w-8 h-8 text-[#6A0DAD] mb-4" />
-                                    <h4 className="font-bold text-[#1a1a2e] mb-2">{item.title}</h4>
-                                    <p className="text-sm text-[#4c4c6d] leading-relaxed">{item.text}</p>
-                                </div>
-                            ))}
+                    </div>
+                    <div className="about-hero-img">
+                        <img
+                            src="/priority_image/WhatsApp Image 2026-02-23 at 9.53.17 AM.jpeg"
+                            alt="Ben Elliott's workshop — refurbished appliances"
+                        />
+                        <div className="about-hero-img-badge">
+                            <strong>Est. 2015</strong>
+                            <span>Gateshead, UK</span>
                         </div>
                     </div>
                 </section>
 
-                {/* Values Banner */}
-                <section className="py-20 bg-[#6A0DAD] text-white">
-                    <div className="max-w-[1280px] mx-auto px-8 text-center">
-                        <h2 className="text-3xl font-bold mb-12">The Ben Elliott Standard</h2>
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-                            {[
-                                { title: "Transparency", text: "No hidden costs. What you see is what you pay, including a full 12-month warranty on every purchase." },
-                                { title: "Reliability", text: "We only source premium brands known for their longevity, ensuring your refurbished machine lasts." },
-                                { title: "Service", text: "From our workshop to your kitchen, we provide professional delivery and expert installation services." }
-                            ].map((value, idx) => (
-                                <div key={idx} className="flex flex-col items-center">
-                                    <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center font-bold text-xl mb-6">
-                                        {idx + 1}
+                {/* ── STATS BAR ── */}
+                <div className="about-stats-bar">
+                    {stats.map((s, i) => (
+                        <div key={i} className="about-stat-item">
+                            <span className="about-stat-value">{s.value}</span>
+                            <span className="about-stat-label">{s.label}</span>
+                        </div>
+                    ))}
+                </div>
+
+                {/* ── OUR STORY ── */}
+                <section className="about-story-section">
+                    <div className="about-story-inner">
+                        <div className="about-story-text">
+                            <span className="about-section-badge">Quality You Can Trust</span>
+                            <h2>We give appliances<br />a second life.</h2>
+                            <p>
+                                We saw thousands of perfectly good machines heading to landfills every year and decided to do something about it. Our team of expert engineers meticulously restores each appliance, putting them through a rigorous 10-point testing plan that covers everything from internal mechanical components to cosmetic finishing.
+                            </p>
+                            <p>
+                                We don&apos;t just fix machines — we breathe new life into them. Today, we&apos;re proud to be a leading name in refurbished appliances, helping thousands of families across the UK save money while making a more sustainable choice.
+                            </p>
+                        </div>
+                        <div className="about-story-images">
+                            <img
+                                className="about-story-img-main"
+                                src="/priority_image/WhatsApp Image 2026-02-23 at 9.53.10 AM.jpeg"
+                                alt="Refurbished washing machine"
+                            />
+                            <img
+                                className="about-story-img-secondary"
+                                src="/priority_image/WhatsApp Image 2026-02-23 at 9.53.11 AM.jpeg"
+                                alt="Appliance restoration"
+                            />
+                        </div>
+                    </div>
+                </section>
+
+                {/* ── VALUES GRID ── */}
+                <section className="about-values-section">
+                    <div className="about-values-inner">
+                        <div className="about-values-header">
+                            <span className="about-section-badge">Why Choose Us</span>
+                            <h2>Built on values that matter.</h2>
+                            <p>Every decision we make is guided by four core principles.</p>
+                        </div>
+                        <div className="about-values-grid">
+                            {values.map((v, i) => (
+                                <div key={i} className="about-value-card">
+                                    <div className="about-value-icon">
+                                        <v.icon size={22} />
                                     </div>
-                                    <h4 className="text-xl font-bold mb-4">{value.title}</h4>
-                                    <p className="text-white/70 leading-relaxed">{value.text}</p>
+                                    <h4>{v.title}</h4>
+                                    <p>{v.text}</p>
                                 </div>
                             ))}
                         </div>
                     </div>
                 </section>
+
+                {/* ── THE BEN ELLIOTT STANDARD ── */}
+                <section className="about-standard-section">
+                    <div className="about-standard-inner">
+                        <div className="about-standard-header">
+                            <span className="about-section-badge-light">Our Commitment</span>
+                            <h2>The Ben Elliott&apos;s Standard</h2>
+                            <p>Three pillars that set us apart from the rest.</p>
+                        </div>
+                        <div className="about-standard-grid">
+                            {standards.map((s, i) => (
+                                <div key={i} className="about-standard-card">
+                                    <span className="about-standard-num">{s.num}</span>
+                                    <h4>{s.title}</h4>
+                                    <p>{s.text}</p>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+
+                {/* ── PHOTO STRIP ── */}
+                <div className="about-photo-strip">
+                    {[
+                        "/priority_image/WhatsApp Image 2026-02-23 at 9.53.12 AM.jpeg",
+                        "/priority_image/WhatsApp Image 2026-02-23 at 9.53.13 AM.jpeg",
+                        "/priority_image/WhatsApp Image 2026-02-23 at 9.53.14 AM.jpeg",
+                        "/priority_image/WhatsApp Image 2026-02-23 at 9.53.15 AM.jpeg",
+                    ].map((src, i) => (
+                        <div key={i} className="about-strip-img">
+                            <img src={src} alt={`Ben Elliott's appliance ${i + 1}`} />
+                        </div>
+                    ))}
+                </div>
+
+                {/* ── CTA ── */}
+                <section className="about-cta-section">
+                    <div className="about-cta-inner">
+                        <h2>Interested in an appliance?</h2>
+                        <p>
+                            We believe in personal service. Browse our range, find what you love, and reach out directly — we&apos;ll handle the rest.
+                        </p>
+                        <div className="about-cta-buttons">
+                            <a href="mailto:benelliott638@gmail.com?subject=Enquiry from Website&body=Hi Ben, I am interested in an appliance. Please can you help me with more information?" className="btn-primary" style={{ fontSize: '16px', padding: '16px 36px' }}>
+                                <Mail size={18} /> Email Us
+                            </a>
+                        </div>
+                    </div>
+                </section>
+
             </main>
 
             <Footer />

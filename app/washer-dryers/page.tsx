@@ -6,28 +6,36 @@ import { washerDryerProducts } from "@/lib/data";
 
 export default function WasherDryersPage() {
     return (
-        <div className="flex flex-col min-h-screen">
+        <div>
             <USPBar />
             <Header />
 
-            <main className="flex-grow bg-[#fcfaff]">
-                {/* Category Hero */}
-                <section className="bg-white py-16 border-b border-[#e8e0f0]">
-                    <div className="max-w-[1280px] mx-auto px-8">
-                        <h1 className="text-4xl font-bold text-[#1a1a2e] mb-4">Refurbished Washer Dryers</h1>
-                        <p className="text-[#4c4c6d] text-base max-w-2xl leading-relaxed">
-                            Space-saving solutions without compromise. Our refurbished washer-dryers offer the best of both worlds, fully tested and backed by our trusted 1-year guarantee.
-                        </p>
-                    </div>
-                </section>
+            <section className="cat-hero">
+                <div className="cat-hero-content">
+                    <span className="cat-hero-badge">Refurbished · Tested · Guaranteed</span>
+                    <h1>Washer Dryers</h1>
+                    <p>
+                        The smart space-saving solution. Our refurbished washer-dryers wash and dry
+                        in one compact machine — perfect for flats and smaller homes. All fully tested
+                        and backed by a 12-month warranty.
+                    </p>
+                    <a href="mailto:benelliott638@gmail.com?subject=Enquiry about Washer Dryers&body=Hi Ben, I am interested in a refurbished washer dryer. Please can you help me with more information?" className="cat-hero-cta">
+                        Enquire Now →
+                    </a>
+                </div>
+                <div className="cat-hero-image">
+                    <img
+                        src="/priority_image/WhatsApp Image 2026-02-23 at 9.53.21 AM.jpeg"
+                        alt="Refurbished Washer Dryer"
+                    />
+                </div>
+            </section>
 
-                {/* Product Grid Section */}
-                <section className="py-20">
-                    <div className="max-w-[1280px] mx-auto px-8">
-                        <ProductGrid products={washerDryerProducts} itemsPerPage={12} />
-                    </div>
-                </section>
-            </main>
+            <section className="products-section">
+                <div className="products-inner">
+                    <ProductGrid products={washerDryerProducts} itemsPerPage={12} />
+                </div>
+            </section>
 
             <Footer />
         </div>

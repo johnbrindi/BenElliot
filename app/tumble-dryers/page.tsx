@@ -6,28 +6,35 @@ import { tumbleDryerProducts } from "@/lib/data";
 
 export default function TumbleDryersPage() {
     return (
-        <div className="flex flex-col min-h-screen">
+        <div>
             <USPBar />
             <Header />
 
-            <main className="flex-grow bg-[#fcfaff]">
-                {/* Category Hero */}
-                <section className="bg-white py-16 border-b border-[#e8e0f0]">
-                    <div className="max-w-[1280px] mx-auto px-8">
-                        <h1 className="text-4xl font-bold text-[#1a1a2e] mb-4">Refurbished Tumble Dryers</h1>
-                        <p className="text-[#4c4c6d] text-base max-w-2xl leading-relaxed">
-                            Efficient drying for every home. Discover our collection of heat pump, condenser, and vented tumble dryers, all precision-restored for peak performance.
-                        </p>
-                    </div>
-                </section>
+            <section className="cat-hero">
+                <div className="cat-hero-content">
+                    <span className="cat-hero-badge">Refurbished · Tested · Guaranteed</span>
+                    <h1>Tumble Dryers</h1>
+                    <p>
+                        Dry faster, spend less. From heat pump to condenser and vented models,
+                        our refurbished tumble dryers are tested and backed by our 12-month guarantee.
+                    </p>
+                    <a href="mailto:benelliott638@gmail.com?subject=Enquiry about Tumble Dryers&body=Hi Ben, I am interested in a refurbished tumble dryer. Please can you help me with more information?" className="cat-hero-cta">
+                        Enquire Now →
+                    </a>
+                </div>
+                <div className="cat-hero-image">
+                    <img
+                        src="/priority_image/WhatsApp Image 2026-02-23 at 9.53.21 AM (1).jpeg"
+                        alt="Refurbished Tumble Dryer"
+                    />
+                </div>
+            </section>
 
-                {/* Product Grid Section */}
-                <section className="py-20">
-                    <div className="max-w-[1280px] mx-auto px-8">
-                        <ProductGrid products={tumbleDryerProducts} itemsPerPage={12} />
-                    </div>
-                </section>
-            </main>
+            <section className="products-section">
+                <div className="products-inner">
+                    <ProductGrid products={tumbleDryerProducts} itemsPerPage={12} />
+                </div>
+            </section>
 
             <Footer />
         </div>
