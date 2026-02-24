@@ -8,23 +8,23 @@ const slides = [
         image: "/priority_image/WhatsApp Image 2026-02-23 at 9.53.10 AM.jpeg",
         alt: "Premium Washing Machines",
         title: "Premium Washing Machines",
-        desc: "Wash smarter, not harder. Discover our range of refurbished washing machines — efficient, reliable, and unbeatable value.",
+        desc: "Wash smarter, not harder. Discover our range of brand new washing machines — efficient, reliable, and unbeatable value.",
         link: "/washing-machines",
         cta: "View Our Range"
     },
     {
         image: "/priority_image/WhatsApp Image 2026-02-23 at 9.53.11 AM.jpeg",
-        alt: "Expertly Restored",
-        title: "Expertly Restored",
-        desc: "Premium brands, expertly restored. Each machine undergoes a rigorous 10-point quality check and comes with a full 12-month warranty.",
+        alt: "Brand New Quality",
+        title: "Brand New Quality",
+        desc: "Premium brands, top quality. Each machine comes with a full 12-month warranty for complete peace of mind.",
         link: "/fridge-freezers",
         cta: "Explore Models"
     },
     {
         image: "/priority_image/WhatsApp Image 2026-02-23 at 9.53.12 AM.jpeg",
-        alt: "Save Up to 60%",
-        title: "Save Up to 60%",
-        desc: "Why pay full price? Our certified refurbished appliances perform like new at a fraction of the cost. Sustainable living starts here.",
+        alt: "Premium Value",
+        title: "Premium Value",
+        desc: "Why pay more elsewhere? Our certified brand new appliances offer top-tier performance at competitive prices.",
         link: "#contact",
         cta: "Contact Us Today"
     },

@@ -1,19 +1,19 @@
 export const heroSlides = [
     {
         title: "Premium Washing Machines",
-        description: "Wash smarter, not harder. Discover our range of refurbished washing machines — efficient, reliable, and unbeatable value.",
+        description: "Wash smarter, not harder. Discover our range of brand new washing machines — efficient, reliable, and unbeatable value.",
         image: "/priority_image/WhatsApp Image 2026-02-23 at 9.53.10 AM.jpeg",
         link: "/washing-machines"
     },
     {
-        title: "Expertly Restored",
-        description: "Premium brands, expertly restored. Each machine undergoes a rigorous 10-point quality check and comes with a full 12-month warranty.",
+        title: "Brand New Quality",
+        description: "Premium brands, top quality. Each machine comes with a full 12-month warranty for complete peace of mind.",
         image: "/priority_image/WhatsApp Image 2026-02-23 at 9.53.11 AM.jpeg",
         link: "/fridge-freezers"
     },
     {
-        title: "Save Up to 60%",
-        description: "Why pay full price? Our certified refurbished appliances perform like new at a fraction of the cost. Sustainable living starts here.",
+        title: "Premium Value",
+        description: "Why pay more elsewhere? Our certified brand new appliances offer top-tier performance at competitive prices.",
         image: "/priority_image/WhatsApp Image 2026-02-23 at 9.53.12 AM.jpeg",
         link: "#contact"
     },
@@ -36,28 +36,28 @@ export const categoryCards = [
         title: "Washing Machines",
         description: "Front-loaders & top-loaders from top brands. Achieve laundry perfection without the price tag.",
         image: "https://images.unsplash.com/photo-1626806787461-102c1bfaaea1?w=400&q=80&fit=crop&auto=format",
-        priceFrom: "£169.00",
+        priceFrom: "$400.00",
         link: "/washing-machines"
     },
     {
         title: "Fridge Freezers",
         description: "Perfect balance of style and functionality, with top-tier brands and significant savings.",
         image: "/priority_image/WhatsApp Image 2026-02-23 at 9.53.20 AM.jpeg",
-        priceFrom: "£149.00",
+        priceFrom: "$459.00",
         link: "/fridge-freezers"
     },
     {
         title: "Washer Dryers",
         description: "Space-saving combo machines — wash and dry for a fraction of the cost of buying new.",
         image: "/priority_image/WhatsApp Image 2026-02-23 at 9.53.21 AM.jpeg",
-        priceFrom: "£239.00",
+        priceFrom: "$479.00",
         link: "/washer-dryers"
     },
     {
         title: "Dishwashers",
-        description: "Sparkling clean results every time. Our refurbished dishwashers deliver without compromise.",
+        description: "Sparkling clean results every time. Our brand new dishwashers deliver without compromise.",
         image: "/priority_image/WhatsApp Image 2026-02-23 at 9.53.22 AM.jpeg",
-        priceFrom: "£109.00",
+        priceFrom: "$400.00",
         link: "/dishwashers"
     }
 ];

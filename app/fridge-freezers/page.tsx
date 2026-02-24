@@ -10,22 +10,23 @@ export default function FridgeFreezersPage() {
             <USPBar />
             <Header />
 
+            {/* Split Hero */}
             <section className="cat-hero">
                 <div className="cat-hero-content">
-                    <span className="cat-hero-badge">Refurbished · Tested · Guaranteed</span>
+                    <span className="cat-hero-badge">Brand New · Tested · Guaranteed</span>
                     <h1>Fridge Freezers</h1>
                     <p>
-                        Keep it cool for less. From American style to integrated models, our refurbished
-                        fridge-freezers are rigorously tested for reliability — at a fraction of the retail price.
+                        Keep it fresh for less. Our brand new fridge freezers offer premium style
+                        and modern features with the peace of mind of a full 1-year guarantee.
                     </p>
-                    <a href="mailto:benelliott638@gmail.com?subject=Enquiry about Fridge Freezers&body=Hi Ben, I am interested in a refurbished fridge freezer. Please can you help me with more information?" className="cat-hero-cta">
+                    <a href="mailto:benelliott638@gmail.com?subject=Enquiry from Website&body=Hi Ben I am interested in getting a washer and dryer machine" className="cat-hero-cta">
                         Enquire Now →
                     </a>
                 </div>
                 <div className="cat-hero-image">
                     <img
                         src="/priority_image/WhatsApp Image 2026-02-23 at 9.53.20 AM.jpeg"
-                        alt="Refurbished Fridge Freezer"
+                        alt="Brand New Fridge Freezer"
                     />
                 </div>
             </section>

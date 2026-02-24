@@ -5,17 +5,17 @@ import { Users, Heart, Award, CheckCircle, Mail } from "lucide-react";
 import Link from "next/link";
 
 const stats = [
-    { value: "5,000+", label: "Appliances Restored" },
+    { value: "5,000+", label: "Appliances Supplied" },
     { value: "12 Month", label: "Warranty on Every Item" },
-    { value: "10-Point", label: "Quality Check Plan" },
-    { value: "60%", label: "Savings vs. Brand New" },
+    { value: "Premium", label: "Brand Partnerships" },
+    { value: "Top Tier", label: "Quality Standards" },
 ];
 
 const values = [
     {
         icon: Users,
         title: "Expert Team",
-        text: "Our specialist engineers bring years of hands-on experience restoring premium appliances to like-new condition.",
+        text: "Our specialist engineers bring years of hands-on experience in selecting and installing premium appliances.",
     },
     {
         icon: Heart,
@@ -25,12 +25,12 @@ const values = [
     {
         icon: Award,
         title: "Certified Quality",
-        text: "Every machine passes our rigorous 10-point testing plan before it ever leaves our workshop.",
+        text: "Every machine meets our rigorous quality standards before it ever leaves our showroom.",
     },
     {
         icon: CheckCircle,
-        title: "Green Choice",
-        text: "By giving appliances a second life, we help reduce CO₂ emissions and keep working machines out of landfill.",
+        title: "Modern Choice",
+        text: "We source the latest energy-efficient models to help you reduce your home's environmental impact.",
     },
 ];
 
@@ -43,12 +43,12 @@ const standards = [
     {
         num: "02",
         title: "Reliability",
-        text: "We only source premium brands known for longevity, so your refurbished machine is built to last.",
+        text: "We only source premium brands known for longevity, so your brand new machine is built to last.",
     },
     {
         num: "03",
         title: "Service",
-        text: "From our workshop to your kitchen, we provide professional delivery and expert installation.",
+        text: "From our showroom to your kitchen, we provide professional delivery and expert installation.",
     },
 ];
 
@@ -65,15 +65,15 @@ export default function AboutUsPage() {
                     <div className="about-hero-content">
                         <span className="about-hero-badge">Our Story</span>
                         <h1 className="about-hero-title">
-                            Refurbished Appliances,<br />
+                            Brand New Appliances,<br />
                             <span>Done Right.</span>
                         </h1>
                         <p className="about-hero-sub">
-                            Ben Elliott&apos;s was founded on a simple belief — high-quality home appliances shouldn&apos;t cost the earth, literally or figuratively. We restore, test, and deliver with pride.
+                            Ben Elliott&apos;s was founded on a simple belief — high-quality home appliances shouldn&apos;t cost the earth. We source, test, and deliver with pride.
                         </p>
                         <div className="about-hero-ctas">
-                            <a href="mailto:benelliott638@gmail.com?subject=Enquiry from Website&body=Hi Ben, I am interested in an appliance. Please can you help me with more information?" className="btn-primary">
-                                <Mail size={16} /> Get in Touch
+                            <a href="mailto:benelliott638@gmail.com?subject=Enquiry from Website&body=Hi Ben I am interested in getting a washer and dryer machine" className="btn-primary">
+                                Enquire Now
                             </a>
                             <Link href="/washing-machines" className="btn-secondary">
                                 Browse Appliances
@@ -83,11 +83,11 @@ export default function AboutUsPage() {
                     <div className="about-hero-img">
                         <img
                             src="/priority_image/WhatsApp Image 2026-02-23 at 9.53.17 AM.jpeg"
-                            alt="Ben Elliott's workshop — refurbished appliances"
+                            alt="Ben Elliott's showroom — brand new appliances"
                         />
                         <div className="about-hero-img-badge">
                             <strong>Est. 2015</strong>
-                            <span>Gateshead, UK</span>
+                            <span></span>
                         </div>
                     </div>
                 </section>
@@ -107,24 +107,24 @@ export default function AboutUsPage() {
                     <div className="about-story-inner">
                         <div className="about-story-text">
                             <span className="about-section-badge">Quality You Can Trust</span>
-                            <h2>We give appliances<br />a second life.</h2>
+                            <h2>Premium Appliances,<br />Superior Value.</h2>
                             <p>
-                                We saw thousands of perfectly good machines heading to landfills every year and decided to do something about it. Our team of expert engineers meticulously restores each appliance, putting them through a rigorous 10-point testing plan that covers everything from internal mechanical components to cosmetic finishing.
+                                We saw a gap in the market for high-quality home appliances delivered with a personal touch. Our team of expert engineers ensures every brand new appliance meets our exacting standards, providing you with high-performance machines from names you trust.
                             </p>
                             <p>
-                                We don&apos;t just fix machines — we breathe new life into them. Today, we&apos;re proud to be a leading name in refurbished appliances, helping thousands of families across the UK save money while making a more sustainable choice.
+                                We don&apos;t just sell machines — we provide a complete service. Today, we&apos;re proud to be a leading name in brand new appliances, helping thousands of families upgrade their homes while receiving the best value and support in the industry.
                             </p>
                         </div>
                         <div className="about-story-images">
                             <img
                                 className="about-story-img-main"
                                 src="/priority_image/WhatsApp Image 2026-02-23 at 9.53.10 AM.jpeg"
-                                alt="Refurbished washing machine"
+                                alt="brand new washing machine"
                             />
                             <img
                                 className="about-story-img-secondary"
                                 src="/priority_image/WhatsApp Image 2026-02-23 at 9.53.11 AM.jpeg"
-                                alt="Appliance restoration"
+                                alt="Modern appliance"
                             />
                         </div>
                     </div>
@@ -194,8 +194,8 @@ export default function AboutUsPage() {
                             We believe in personal service. Browse our range, find what you love, and reach out directly — we&apos;ll handle the rest.
                         </p>
                         <div className="about-cta-buttons">
-                            <a href="mailto:benelliott638@gmail.com?subject=Enquiry from Website&body=Hi Ben, I am interested in an appliance. Please can you help me with more information?" className="btn-primary" style={{ fontSize: '16px', padding: '16px 36px' }}>
-                                <Mail size={18} /> Email Us
+                            <a href="mailto:benelliott638@gmail.com?subject=Enquiry from Website&body=Hi Ben I am interested in getting a washer and dryer machine" className="btn-primary" style={{ fontSize: '16px', padding: '16px 36px' }}>
+                                Enquire via Email
                             </a>
                         </div>
                     </div>

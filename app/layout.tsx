@@ -2,20 +2,18 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Ben Elliott's Washers – Premium Refurbished Appliances",
-  description: "High-quality refurbished washing machines, dryers, and fridge freezers at a fraction of the cost.",
+  title: "Ben Elliott's Washers – Premium Brand New Appliances",
+  description: "High-quality brand new washing machines, dryers, and fridge freezers at high-value prices.",
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
-      <body>
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

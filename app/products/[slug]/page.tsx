@@ -46,15 +46,15 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
         .slice(0, 4) as Product[];
 
     const emailSubject = `Enquiry about: ${product.name}`;
-    const emailBody = `Hi Ben, I am interested in this ${product.name}. Please can you give me more details about its availability and delivery options?`;
+    const emailBody = "Hi Ben I am interested in getting a washer and dryer machine";
     const mailtoHref = `mailto:benelliott638@gmail.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
 
     const features: string[] = product.features ?? [
-        "Expertly refurbished by our trained engineers",
-        "Full 10-point testing plan completed",
+        "Brand new premium appliance",
+        "Full manufacturer standards met",
         "12-month Ben Elliott's warranty included",
         "Professional delivery available",
-        "Cosmetically inspected and cleaned",
+        "Pristine condition guaranteed",
     ];
 
     return (
@@ -80,7 +80,7 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
                             </div>
                             <div className="detail-badge">
                                 <CheckCircle size={16} style={{ color: "var(--purple)" }} />
-                                10-Point Check
+                                Quality Guaranteed
                             </div>
                         </div>
                     </div>
@@ -91,12 +91,12 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
 
                         <div className="detail-price-block">
                             <span className="detail-price">{product.price}</span>
-                            <span className="detail-price-label">Refurbished · VAT included</span>
+                            <span className="detail-price-label">Brand New · VAT included</span>
                         </div>
 
                         <p className="detail-description">
                             {product.description ??
-                                `This appliance has been expertly refurbished by our trained engineers and passes our full 10-point quality check. It comes complete with a 12-month Ben Elliott's warranty and is ready for delivery.`}
+                                `This brand new appliance from ${product.brand} offers exceptional performance and reliability. It comes complete with a 12-month Ben Elliott's warranty and is ready for delivery to your home.`}
                         </p>
 
                         {/* Specs Table */}
@@ -134,7 +134,7 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
                                 )}
                                 <tr>
                                     <td>Condition</td>
-                                    <td>Refurbished — Like New</td>
+                                    <td>Brand New</td>
                                 </tr>
                                 <tr>
                                     <td>Warranty</td>

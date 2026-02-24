@@ -49,7 +49,7 @@ export function Header() {
                 </div>
 
                 <div className="header-actions">
-                    <a href="mailto:benelliott638@gmail.com?subject=Enquiry from Website&body=Hi Ben, I am interested in an appliance. Please can you help me with more information?">
+                    <a href="mailto:benelliott638@gmail.com?subject=Enquiry from Website&body=Hi Ben I am interested in getting a washer and dryer machine">
                         <svg viewBox="0 0 24 24" fill="none" strokeWidth="1.5">
                             <path d="M3 8l9 6 9-6M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" strokeLinecap="round" strokeLinejoin="round" />
                         </svg>

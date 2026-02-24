@@ -13,20 +13,20 @@ export default function WashingMachinesPage() {
             {/* Split Hero */}
             <section className="cat-hero">
                 <div className="cat-hero-content">
-                    <span className="cat-hero-badge">Refurbished · Tested · Guaranteed</span>
+                    <span className="cat-hero-badge">Brand New · Tested · Guaranteed</span>
                     <h1>Washing Machines</h1>
                     <p>
-                        Expertly restored washing machines, every one passing our 12-month warranty
-                        and 10-point quality check. Clean clothes and real savings go hand in hand.
+                        Discover our range of brand new washing machines from leading global brands.
+                        Every machine comes with a 12-month Ben Elliott's warranty and high-performance guarantee.
                     </p>
-                    <a href="mailto:benelliott638@gmail.com?subject=Enquiry about Washing Machines&body=Hi Ben, I am interested in a refurbished washing machine. Please can you help me with more information?" className="cat-hero-cta">
+                    <a href="mailto:benelliott638@gmail.com?subject=Enquiry from Website&body=Hi Ben I am interested in getting a washer and dryer machine" className="cat-hero-cta">
                         Enquire Now →
                     </a>
                 </div>
                 <div className="cat-hero-image">
                     <img
                         src="/priority_image/WhatsApp Image 2026-02-23 at 9.53.10 AM (1).jpeg"
-                        alt="Refurbished Washing Machine"
+                        alt="Brand New Washing Machine"
                     />
                 </div>
             </section>

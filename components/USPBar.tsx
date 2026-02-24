@@ -1,13 +1,13 @@
 export function USPBar() {
     const usps = [
-        "✦ Premium Refurbished Washing Machines by Ben Elliott's",
-        "✦ Free Delivery on Orders Over £200",
+        "✦ Premium brand new luxury appliances by Ben Elliott's",
+        "✦ Free Delivery on Orders Over $400",
         "✦ 12-Month Warranty on Every Appliance",
-        "✦ Pay in 4 interest-free payments with Clearpay",
-        "✦ Premium Refurbished Washing Machines by Ben Elliott's",
-        "✦ Free Delivery on Orders Over £200",
+        "✦ Pay in interest-free payments with available plans",
+        "✦ Premium brand new luxury appliances by Ben Elliott's",
+        "✦ Free Delivery on Orders Over $400",
         "✦ 12-Month Warranty on Every Appliance",
-        "✦ Pay in 4 interest-free payments with Clearpay",
+        "✦ Pay in interest-free payments with available plans",
     ];
 
     return (
