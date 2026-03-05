@@ -839,7 +839,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  color: rgba(255, 255, 255, .4);
+  color: rgba(255, 255, 255, 0.6);
   font-size: 13px;
 }
 
@@ -1980,7 +1980,7 @@ body {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .footer-grid {
+  .footer-top {
     grid-template-columns: 1fr 1fr;
     gap: 28px;
   }
@@ -2006,7 +2006,7 @@ body {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .footer-grid {
+  .footer-top {
     grid-template-columns: 1fr 1fr;
     gap: 28px;
   }
@@ -2035,7 +2035,7 @@ body {
     display: none;
   }
 
-  .footer-grid {
+  .footer-top {
     grid-template-columns: 1fr;
   }
 
@@ -2991,7 +2991,7 @@ body {
   }
 
   /* Footer */
-  .footer-grid {
+  .footer-top {
     grid-template-columns: 1fr;
     gap: 32px;
   }
