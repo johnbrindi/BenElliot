@@ -39,7 +39,7 @@ export async function getSanityProducts(categoryQuery?: string): Promise<Product
                 colour
             }`;
 
-        const products = await client.fetch(query);
+        const products = await client.fetch(query, {}, { cache: 'no-store' });
         return products.map((p: any) => ({
             ...p,
             logo: p.brand ? `/brands/${p.brand.toLowerCase()}.png` : '' // Fallback for logo
@@ -79,7 +79,7 @@ export async function getCombinedProductBySlug(slug: string): Promise<Product | 
                 spinSpeed,
                 colour
             }`;
-            const p = await client.fetch(query);
+            const p = await client.fetch(query, {}, { cache: 'no-store' });
             if (p) {
                 return {
                     ...p,
