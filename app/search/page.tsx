@@ -1,15 +1,17 @@
-"use client";
-
-import { useSearchParams } from "next/navigation";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { ProductCard } from "@/components/ProductCard";
-import { allProducts } from "@/lib/data";
-import { Suspense } from "react";
+import { getAllCombinedProducts } from "@/lib/getCombinedProducts";
 
-function SearchResults() {
-    const searchParams = useSearchParams();
-    const query = searchParams.get("q")?.toLowerCase() || "";
+export default async function SearchPage({
+    searchParams,
+}: {
+    searchParams: { [key: string]: string | string[] | undefined }
+}) {
+    const rawQuery = searchParams?.q;
+    const query = typeof rawQuery === 'string' ? rawQuery.toLowerCase() : "";
+
+    const allProducts = await getAllCombinedProducts();
 
     const results = allProducts.filter(product =>
         product.name.toLowerCase().includes(query) ||
@@ -48,13 +50,5 @@ function SearchResults() {
 
             <Footer />
         </main>
-    );
-}
-
-export default function SearchPage() {
-    return (
-        <Suspense fallback={<div>Loading search...</div>}>
-            <SearchResults />
-        </Suspense>
     );
 }

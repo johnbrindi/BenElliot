@@ -3,8 +3,11 @@ import { Header } from "@/components/Header";
 import { ProductGrid } from "@/components/ProductGrid";
 import { Footer } from "@/components/Footer";
 import { tumbleDryerProducts } from "@/lib/data";
+import { getCombinedCategoryProducts } from "@/lib/getCombinedProducts";
 
-export default function TumbleDryersPage() {
+export default async function TumbleDryersPage() {
+    const products = await getCombinedCategoryProducts('Tumble Dryers', tumbleDryerProducts as any);
+
     return (
         <div>
             <USPBar />
@@ -33,7 +36,7 @@ export default function TumbleDryersPage() {
 
             <section className="products-section">
                 <div className="products-inner">
-                    <ProductGrid products={tumbleDryerProducts} itemsPerPage={12} />
+                    <ProductGrid products={products} itemsPerPage={12} />
                 </div>
             </section>
 

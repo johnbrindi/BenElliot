@@ -1,3 +1,17 @@
+## Running Sanity Studio (CMS)
+
+Sanity Studio is now run as a standalone app for best compatibility with Next.js 16 and Sanity v5.
+
+### To start Sanity Studio:
+
+1. Open a terminal in the project root.
+2. Run:
+	```
+	npx sanity dev --cwd studio
+	```
+3. Studio will be available at http://localhost:3333
+
+You can still use `next-sanity` for fetching data in your Next.js app.
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started

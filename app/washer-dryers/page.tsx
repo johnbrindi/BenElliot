@@ -3,8 +3,11 @@ import { Header } from "@/components/Header";
 import { ProductGrid } from "@/components/ProductGrid";
 import { Footer } from "@/components/Footer";
 import { washerDryerProducts } from "@/lib/data";
+import { getCombinedCategoryProducts } from "@/lib/getCombinedProducts";
 
-export default function WasherDryersPage() {
+export default async function WasherDryersPage() {
+    const products = await getCombinedCategoryProducts('Washer Dryers', washerDryerProducts as any);
+
     return (
         <div>
             <USPBar />
@@ -33,7 +36,7 @@ export default function WasherDryersPage() {
 
             <section className="products-section">
                 <div className="products-inner">
-                    <ProductGrid products={washerDryerProducts} itemsPerPage={12} />
+                    <ProductGrid products={products} itemsPerPage={12} />
                 </div>
             </section>
 

@@ -26,6 +26,7 @@ export interface Product {
     spinSpeed?: string;
     description?: string;
     features?: string[];
+    dimensions?: string;
 }
 
 export const allProducts: Product[] = [

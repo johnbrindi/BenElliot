@@ -12,38 +12,19 @@ import {
     dishwasherProducts,
 } from "@/lib/data";
 
-// Pull all products into one flat lookup
-const allProducts = [
-    ...washingMachineProducts,
-    ...washerDryerProducts,
-    ...tumbleDryerProducts,
-    ...fridgeFreezerProducts,
-    ...dishwasherProducts,
-];
+// Products are fetched dynamically using getCombinedProductBySlug
 
-type Product = (typeof allProducts)[0] & {
-    slug: string;
-    description?: string;
-    features?: string[];
-    energyRating?: string;
-    capacity?: string;
-    spinSpeed?: string;
-    colour?: string;
-    dimensions?: string;
-    category?: string;
-};
+import { getCombinedProductBySlug, getAllCombinedProducts } from "@/lib/getCombinedProducts";
 
-export default function ProductDetailPage({ params }: { params: { slug: string } }) {
-    const product = allProducts.find(
-        (p) => (p as Product).slug === params.slug ||
-            p.name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "") === params.slug
-    ) as Product | undefined;
+export default async function ProductDetailPage({ params }: { params: { slug: string } }) {
+    const product = await getCombinedProductBySlug(params.slug);
 
     if (!product) return notFound();
 
+    const allProducts = await getAllCombinedProducts();
     const related = allProducts
-        .filter((p) => p.brand === product.brand && (p as Product).slug !== product.slug)
-        .slice(0, 4) as Product[];
+        .filter((p) => p.brand === product.brand && (p.slug !== product.slug))
+        .slice(0, 4);
 
     const emailSubject = `Enquiry about: ${product.name}`;
     const emailBody = "Hi Ben I am interested in getting a washer and dryer machine";

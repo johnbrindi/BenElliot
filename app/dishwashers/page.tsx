@@ -3,8 +3,11 @@ import { Header } from "@/components/Header";
 import { ProductGrid } from "@/components/ProductGrid";
 import { Footer } from "@/components/Footer";
 import { dishwasherProducts } from "@/lib/data";
+import { getCombinedCategoryProducts } from "@/lib/getCombinedProducts";
 
-export default function DishwashersPage() {
+export default async function DishwashersPage() {
+    const products = await getCombinedCategoryProducts('Dishwashers', dishwasherProducts as any);
+
     return (
         <div>
             <USPBar />
@@ -33,7 +36,7 @@ export default function DishwashersPage() {
 
             <section className="products-section">
                 <div className="products-inner">
-                    <ProductGrid products={dishwasherProducts} itemsPerPage={12} />
+                    <ProductGrid products={products} itemsPerPage={12} />
                 </div>
             </section>
 

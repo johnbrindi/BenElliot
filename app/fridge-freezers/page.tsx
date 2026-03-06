@@ -3,8 +3,11 @@ import { Header } from "@/components/Header";
 import { ProductGrid } from "@/components/ProductGrid";
 import { Footer } from "@/components/Footer";
 import { fridgeFreezerProducts } from "@/lib/data";
+import { getCombinedCategoryProducts } from "@/lib/getCombinedProducts";
 
-export default function FridgeFreezersPage() {
+export default async function FridgeFreezersPage() {
+    const products = await getCombinedCategoryProducts('Fridge Freezers', fridgeFreezerProducts as any);
+
     return (
         <div>
             <USPBar />
@@ -33,7 +36,7 @@ export default function FridgeFreezersPage() {
 
             <section className="products-section">
                 <div className="products-inner">
-                    <ProductGrid products={fridgeFreezerProducts} itemsPerPage={12} />
+                    <ProductGrid products={products} itemsPerPage={12} />
                 </div>
             </section>
 
